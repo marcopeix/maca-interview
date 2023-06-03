@@ -12,13 +12,31 @@ I also included a sales forecasting model so we can see where sales are headed.
 
 ## How to run the service
 
+The dashboard is deployed at the following [link](https://marcopeix-maca-interview-main-v8h7m3.streamlit.app/)
+
+### On a local machine
+
+#### Windows
+- Make sure that you have Anaconda installed
+- Clone the repository
+- Create a virtual environment with `conda create --name venv python=3.10 --file requirements.txt`.
+- Activate the virtual environment: `conda activate venv`
+- Run the service with `streamlit run main.py`
+
+#### Linux
+- Clone the repository
+- Create a virtual environment: `python -m venv venv`
+- Activate the virtual environment: `source venv/bin/activate`
+- Install the packages with `pip install -r requirements.txt`.
+- Run the service with `streamlit run main.py`.
+
 ## Decision log
 1. Find data suitable for a RevOps dashboard. It was important to have data coming from at least two different domains to respect the project's requirements.
 2. Research on RevOps. I wanted to learn what RevOps was about, to know what kind of insights would be interesting.
 3. Decide on the tools to use for this project. Here, I decided to go with Streamlit, so that I can focus on the Python code and logic behind the dashboard and not worry about creating a nice UI. It's also easy to deploy and prototype.
 4. Decide on what insights to show. Since we want information that ties marketing and revenue, and since I noticed that not all leads eventually turned into sales, I figured that it would interesting to know the ratio of leads that actually turn into sales. Then, I saw that there were many first points of contact, so it would be interesting to know led to more sales, so the company can focus their marketing efforts. Studying the data more, I saw that it took time from the first point of contact to making the sale, and that time must be important because it represents effort by the sale team, and ideally, you close as fast as possible to maximize profit.
 5. Buid intelligent recommendations. From the insights above, I determined that machine learning techniques could be used to inform future decisions. I used Shap values with a simple decision tree model to determine what factors can maximize revenue. Then, I used a time series forecasting model to predict sales over the next 6 months. That way, the team can know where sales are headed with a confidence interval. I wanted the horizon to be set by the user, but I didn't have the time.
-6. Given more time, I would have added the functionality to set a start and end date on the dashboard to analyze the data. The UI is there, but not the logic. I would have also like to visualize geographical data to see if location of the seller can affect its performance on the platform. 
+6. Given more time, I would have added the functionality to set a start and end date on the dashboard to analyze the data. The UI is there, but not the logic. I would have also like to visualize geographical data to see if location of the seller can affect its performance on the platform. Also, it would have been interesting to test out different models to predict revenue and sales.
 
 ## How long it took
 - 1 day to find the dataset and research into RevOps

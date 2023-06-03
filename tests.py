@@ -1,6 +1,5 @@
 import unittest
 import pandas as pd
-import requests
 from io import StringIO
 from main import read_sellers_data, get_closed_deals, get_closed_deals_per_origin, compute_average_close_time, compute_avg_declared_monthly_revenue
 
